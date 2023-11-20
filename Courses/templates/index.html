@@ -87,7 +87,7 @@
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/p1.jpg" alt="">
+										<img class="img-fluid" src="{% static 'img/p1.jpg' %}" alt="">
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
@@ -109,7 +109,7 @@
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/p2.jpg" alt="">
+										<img class="img-fluid" src="{% static 'img/p2.jpg' %}" alt="">
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
@@ -131,7 +131,7 @@
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/p3.jpg" alt="">
+										<img class="img-fluid" src="{% static 'img/p3.jpg' %}" alt="">
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
@@ -153,7 +153,7 @@
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/p4.jpg" alt="">
+										<img class="img-fluid" src="{% static 'img/p4.jpg' %}" alt="">
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
@@ -175,7 +175,7 @@
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/p1.jpg" alt="">
+										<img class="img-fluid" src="{% static 'img/p1.jpg' %}" alt="">
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
@@ -197,7 +197,7 @@
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/p2.jpg" alt="">
+										<img class="img-fluid" src="{% static 'img/p2.jpg' %}" alt="">
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
@@ -219,7 +219,7 @@
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/p3.jpg" alt="">
+										<img class="img-fluid" src="{% static 'img/p3.jpg' %}" alt="">
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
@@ -241,7 +241,7 @@
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/p4.jpg" alt="">
+										<img class="img-fluid" src="{% static 'img/p4.jpg' %}" alt="">
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
@@ -300,11 +300,11 @@
 							<form class="form-wrap" action="#">
 								<h4 class="text-white pb-20 text-center mb-30">Search for Available Course</h4>
 								<input type="text" class="form-control" name="name" placeholder="Your Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name'" >
-								<input type="phone" class="form-control" name="phone" placeholder="Your Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Phone Number'" >
+								<input type="tel" class="form-control" name="phone" placeholder="Your Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Phone Number'" >
 								<input type="email" class="form-control" name="email" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address'" >
 								<div class="form-select" id="service-select">
 									<select>
-										<option datd-display="">Choose Course</option>
+										<option data-display="">Choose Course</option>
 										<option value="1">Course One</option>
 										<option value="2">Course Two</option>
 										<option value="3">Course Three</option>
@@ -335,10 +335,10 @@
 						<div class="active-upcoming-event-carusel">
 							<div class="single-carusel row align-items-center">
 								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="img/e1.jpg" alt="">
+									<img class="img-fluid" src="{% static 'img/e1.jpg' %}" alt="">
 								</div>
 								<div class="detials col-12 col-md-6">
-									<p>25th February, 2018</p>
+									<p>25th November 2023</p>
 									<a href="#"><h4>The Universe Through
 									A Child S Eyes</h4></a>
 									<p>
@@ -348,10 +348,10 @@
 							</div>
 							<div class="single-carusel row align-items-center">
 								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="img/e2.jpg" alt="">
+									<img class="img-fluid" src="{% static 'img/e2.jpg' %}" alt="">
 								</div>
 								<div class="detials col-12 col-md-6">
-									<p>25th February, 2018</p>
+									<p>25th November 2023</p>
 									<a href="#"><h4>The Universe Through
 									A Child S Eyes</h4></a>
 									<p>
@@ -361,10 +361,10 @@
 							</div>
 							<div class="single-carusel row align-items-center">
 								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="img/e1.jpg" alt="">
+									<img class="img-fluid" src="{% static 'img/e1.jpg' %}" alt="">
 								</div>
 								<div class="detials col-12 col-md-6">
-									<p>25th February, 2018</p>
+									<p>25th November 2023</p>
 									<a href="#"><h4>The Universe Through
 									A Child S Eyes</h4></a>
 									<p>
@@ -374,10 +374,10 @@
 							</div>
 							<div class="single-carusel row align-items-center">
 								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="img/e1.jpg" alt="">
+									<img class="img-fluid" src="{% static 'img/e1.jpg' %}" alt="">
 								</div>
 								<div class="detials col-12 col-md-6">
-									<p>25th February, 2018</p>
+									<p>25th November 2023</p>
 									<a href="#"><h4>The Universe Through
 									A Child S Eyes</h4></a>
 									<p>
@@ -387,10 +387,10 @@
 							</div>
 							<div class="single-carusel row align-items-center">
 								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="img/e2.jpg" alt="">
+									<img class="img-fluid" src="{% static 'img/e2.jpg' %}" alt="">
 								</div>
 								<div class="detials col-12 col-md-6">
-									<p>25th February, 2018</p>
+									<p>25th November 2023</p>
 									<a href="#"><h4>The Universe Through
 									A Child S Eyes</h4></a>
 									<p>
@@ -400,10 +400,10 @@
 							</div>
 							<div class="single-carusel row align-items-center">
 								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="img/e1.jpg" alt="">
+									<img class="img-fluid" src="{% static 'img/e1.jpg' %}" alt="">
 								</div>
 								<div class="detials col-12 col-md-6">
-									<p>25th February, 2018</p>
+									<p>25th November 2023</p>
 									<a href="#"><h4>The Universe Through
 									A Child S Eyes</h4></a>
 									<p>
@@ -514,7 +514,7 @@
 								</p>
 							</div>
 							<div class="single-review item">
-								<img src="img/r1.png" alt="">
+								<img src="{% static 'img/r1.png' %}" alt="">
 								<div class="title justify-content-start d-flex">
 									<a href="#"><h4>Fannie Rowe</h4></a>
 									<div class="star">
@@ -581,10 +581,10 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-6 single-blog">
 							<div class="thumb">
-								<img class="img-fluid" src="img/b1.jpg" alt="">
+								<img class="img-fluid" src="{% static 'img/b1.jpg' %}" alt="">
 							</div>
-							<p class="meta">25 April, 2018  |  By <a href="#">Mark Wiens</a></p>
-							<a href="blog-single.html">
+							<p class="meta">25 November 2023  |  By <a href="#">Mark Wiens</a></p>
+							<a href="{% url 'linc:blog_single' %}">
 								<h5>Addiction When Gambling Becomes A Problem</h5>
 							</a>
 							<p>
@@ -594,10 +594,10 @@
 						</div>
 						<div class="col-lg-3 col-md-6 single-blog">
 							<div class="thumb">
-								<img class="img-fluid" src="img/b2.jpg" alt="">
+								<img class="img-fluid" src="{% static 'img/b2.jpg' %}" alt="">
 							</div>
-							<p class="meta">25 April, 2018  |  By <a href="#">Mark Wiens</a></p>
-							<a href="blog-single.html">
+							<p class="meta">25 November 2023  |  By <a href="#">Mark Wiens</a></p>
+							<a href="{% url 'linc:blog_single' %}">
 								<h5>Computer Hardware Desktops And Notebooks</h5>
 							</a>
 							<p>
@@ -607,10 +607,10 @@
 						</div>
 						<div class="col-lg-3 col-md-6 single-blog">
 							<div class="thumb">
-								<img class="img-fluid" src="img/b3.jpg" alt="">
+								<img class="img-fluid" src="{% static 'img/b3.jpg' %}" alt="">
 							</div>
-							<p class="meta">25 April, 2018  |  By <a href="#">Mark Wiens</a></p>
-							<a href="blog-single.html">
+							<p class="meta">25 November 2023  |  By <a href="#">Mark Wiens</a></p>
+							<a href="{% url 'linc:blog_single' %}">
 								<h5>Make Myspace Your Best Designed Space</h5>
 							</a>
 							<p>
@@ -620,10 +620,10 @@
 						</div>
 						<div class="col-lg-3 col-md-6 single-blog">
 							<div class="thumb">
-								<img class="img-fluid" src="img/b4.jpg" alt="">
+								<img class="img-fluid" src="{% static 'img/b4.jpg' %}" alt="">
 							</div>
-							<p class="meta">25 April, 2018  |  By <a href="#">Mark Wiens</a></p>
-							<a href="blog-single.html">
+							<p class="meta">25 November 2023  |  By <a href="#">Mark Wiens</a></p>
+							<a href="{% url 'linc:blog_single' %}">
 								<h5>Video Games Playing With Imagination</h5>
 							</a>
 							<p>
