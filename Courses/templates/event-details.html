@@ -11,7 +11,7 @@
 							<h1 class="text-white">
 								Event Details
 							</h1>
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="event-details.html"> Event Details</a></p>
+							<p class="text-white link-nav"><a href="{% url 'linc:home' %}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="event-details.html"> Event Details</a></p>
 						</div>
 					</div>
 				</div>
@@ -24,7 +24,7 @@
 					<div class="row">
 						<div class="col-lg-8 event-details-left">
 							<div class="main-img">
-								<img class="img-fluid" src="img/event-details-img.jpg" alt="">
+								<img class="img-fluid" src="{% static 'img/event-details-img.jpg' %}" alt="">
 							</div>
 							<div class="details-content">
 								<a href="#">
@@ -40,10 +40,11 @@
 							<div class="social-nav row no-gutters">
 								<div class="col-lg-6 col-md-6 ">
 									<ul class="focials">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-										<li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                        <li><a href="https://www.facebook.com/collins.lincoln.331"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/Lincoln_331"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/in/collins-ochieng-9b2303251/"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="https://www.instagram.com/collins.linc/"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="https://github.com/Collins331"><i class="fa fa-github"></i></a></li>
 									</ul>
 								</div>
 								<div class="col-lg-6 col-md-6 navs">
@@ -58,11 +59,11 @@
 								<ul class="mt-10">
 									<li class="justify-content-between d-flex">
 										<span>Start date</span>
-										<span>15th April, 2018</span>
+										<span>15th December 2023</span>
 									</li>
 									<li class="justify-content-between d-flex">
 										<span>End date</span>
-										<span>18th April, 2018</span>
+										<span>18th December 2023</span>
 									</li>
 									<li class="justify-content-between d-flex">
 										<span>Ticket Price</span>
@@ -119,7 +120,7 @@
 							<h1>Not Yet Satisfied with our Trend?</h1>
 						</div>
 						<div class="col-lg-4 cta-right">
-							<a class="primary-btn wh" href="#">view our blog</a>
+							<a class="primary-btn wh" href="{% url 'linc:blog_home' %}">view our blog</a>
 						</div>
 					</div>
 				</div>

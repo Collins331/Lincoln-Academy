@@ -2,6 +2,12 @@
 {% load static %}
 {% block body %}
 	<!-- start banner Area -->
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>{{ message }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
 			<section class="banner-area relative" id="home">
 				<div class="overlay overlay-bg"></div>
 				<div class="container">
@@ -61,7 +67,7 @@
 									<p>
 										If you are a serious astronomy fanatic like a lot of us are, you can probably remember that one event.
 									</p>
-									<a href="#">Join Now</a>
+									<a href="">Join Now</a>
 								</div>
 							</div>
 						</div>
@@ -645,7 +651,7 @@
 							<h1>Not Yet Satisfied with our Trend?</h1>
 						</div>
 						<div class="col-lg-4 cta-right">
-							<a class="primary-btn wh" href="#">view our blog</a>
+							<a class="primary-btn wh" href="{% url 'linc:blog_home' %}">view our blog</a>
 						</div>
 					</div>
 				</div>
