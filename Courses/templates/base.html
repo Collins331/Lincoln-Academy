@@ -16,11 +16,16 @@
         <meta itemprop="image" content="{% static 'img/Linc-Academy-Logo_White.png' %}">
         <meta itemprop="description" content="A leading learning platform that foster skills development in various fields of study">
         <meta itemprop="name" content="Linc Academy">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!--Font awesome icons -->
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 		<meta name="keywords" content="Computer Science, Software engineering, Medical courses, django, Mpesa">
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Linc Academy</title>
+		<title>{% block title %} {% endblock %} </title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 			<!--
@@ -38,6 +43,41 @@
 		</head>
 		<body>
 		  <header id="header">
+              <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <nav class="navbar navbar-expand-md navbar-light " style="background-color: #0b1121">
+                  <a href="/" class="navbar-brand" style="color: #aaaaaa; font-size: larger">LINC ACADEMY</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ml-auto">
+                          {% if user.is_authenticated %}
+                            <a href="{% url 'linc:users-profile' %}" style="color: #aaaaaa" class="nav-item nav-link">Profile</a>
+                            <a href="{% url 'logout' %}" class="nav-item  nav-link" style="color: #aaaaaa">Logout</a>
+                          {% else %}
+                            <a href="{% url 'login' %}" class="nav-item nav-link" style="color: #aaaaaa">Sign in</a>
+                          {% endif %}
+
+                        </div>
+                    </div>
+                </nav>
+                <!--Any flash messages pop up in any page because this is the base template-->
+                {% if messages %}
+                  <div class="alert alert-dismissible" role="alert">
+                    {% for message in messages %}
+                      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                {% endif %}
+                {% block content %}{% endblock %}
+              </div>
+            </div>
+          </div>
 	  		<div class="header-top">
 	  			<div class="container">
 			  		<div class="row">
@@ -50,9 +90,17 @@
                                 <li><a href="https://github.com/Collins331"><i class="fa fa-github"></i></a></li>
 			  				</ul>
 			  			</div>
+
 			  			<div class="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
 			  				<a href="tel:+254 797 450 093"><span class="lnr lnr-phone-handset"></span> <span class="text">+254 797 450 093</span></a>
 			  				<a href="mailto:ochiengcollinsoduor2@gmail.com"><span class="lnr lnr-envelope"></span> <span class="text">linc@gmail.com</span></a>
+{#                            <p class="lead">#}
+{#                                {% if user.is_authenticated %}#}
+{#                                    <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button">Logout</a>#}
+{#                                {% else %}#}
+{#                                    <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Sign in</a>#}
+{#                                {% endif %}#}
+{#                            </p>#}
 			  			</div>
 			  		</div>
 	  			</div>
@@ -192,6 +240,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+{#            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>#}
+{#            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>#}
+{#            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>#}
+{##}
+{#            <!-- A plugin for password show/hide  -->#}
+{#            <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>#}
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
   			<script src="{% static 'js/easing.min.js' %}"></script>
 			<script src="{% static 'js/hoverIntent.js' %}"></script>

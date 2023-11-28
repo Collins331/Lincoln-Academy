@@ -3,6 +3,9 @@ from . import views
 
 app_name = 'linc'
 urlpatterns = [
+    path('join', views.join, name='users-home'),
+    path('register/', views.RegisterView.as_view(), name='users-register'),
+    path('profile/', views.profile, name='users-profile'),
     path('', views.home, name='home'),
     path('course-details', views.course_details, name='course_details'),
     path('gallery', views.gallery, name='gallery'),
