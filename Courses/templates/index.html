@@ -37,7 +37,7 @@
 										Usage of the Internet is becoming more common due to rapid advancement
 										of technology.
 									</p>
-									<a href="#">Join Now</a>
+									<a href="{% url 'linc:users-register' %}">Join Now</a>
 								</div>
 							</div>
 						</div>
@@ -50,7 +50,7 @@
 									<p>
 										For many of us, our very first experience of learning about the celestial bodies begins when we saw our first.
 									</p>
-									<a href="#">Join Now</a>
+									<a href="{% url 'linc:users-register' %}">Join Now</a>
 								</div>
 							</div>
 						</div>
@@ -63,7 +63,7 @@
 									<p>
 										If you are a serious astronomy fanatic like a lot of us are, you can probably remember that one event.
 									</p>
-									<a href="">Join Now</a>
+									<a href="{% url 'linc:users-register' %}">Join Now</a>
 								</div>
 							</div>
 						</div>
@@ -73,6 +73,7 @@
 			<!-- End feature Area -->
 
 			<!-- Start popular-course Area -->
+
 			<section class="popular-course-area section-gap">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
@@ -83,186 +84,34 @@
 							</div>
 						</div>
 					</div>
+                    {% if data %}
 					<div class="row">
 						<div class="active-popular-carusel">
+                            {% for item in data %}
 							<div class="single-popular-carusel">
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
 										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="{% static 'img/p1.jpg' %}" alt="">
+										<img class="img-fluid" src="media/{{ item.image }}" alt="{{ item.course }}">
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
-										<h4>$150</h4>
+										<h4>${{ item.price }}</h4>
 									</div>
 								</div>
 								<div class="details">
 									<a href="#">
 										<h4>
-											Learn Designing
+											{{ item.course }}
 										</h4>
 									</a>
 									<p>
-										When television was young, there was a hugely popular show based on the still popular fictional characte
+										{{ item.description }}
 									</p>
 								</div>
 							</div>
-							<div class="single-popular-carusel">
-								<div class="thumb-wrap relative">
-									<div class="thumb relative">
-										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="{% static 'img/p2.jpg' %}" alt="">
-									</div>
-									<div class="meta d-flex justify-content-between">
-										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
-										<h4>$150</h4>
-									</div>
-								</div>
-								<div class="details">
-									<a href="#">
-										<h4>
-											Learn React js beginners
-										</h4>
-									</a>
-									<p>
-										When television was young, there was a hugely popular show based on the still popular fictional characte
-									</p>
-								</div>
-							</div>
-							<div class="single-popular-carusel">
-								<div class="thumb-wrap relative">
-									<div class="thumb relative">
-										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="{% static 'img/p3.jpg' %}" alt="">
-									</div>
-									<div class="meta d-flex justify-content-between">
-										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
-										<h4>$150</h4>
-									</div>
-								</div>
-								<div class="details">
-									<a href="#">
-										<h4>
-											Learn Photography
-										</h4>
-									</a>
-									<p>
-										When television was young, there was a hugely popular show based on the still popular fictional characte
-									</p>
-								</div>
-							</div>
-							<div class="single-popular-carusel">
-								<div class="thumb-wrap relative">
-									<div class="thumb relative">
-										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="{% static 'img/p4.jpg' %}" alt="">
-									</div>
-									<div class="meta d-flex justify-content-between">
-										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
-										<h4>$150</h4>
-									</div>
-								</div>
-								<div class="details">
-									<a href="#">
-										<h4>
-											Learn Surveying
-										</h4>
-									</a>
-									<p>
-										When television was young, there was a hugely popular show based on the still popular fictional characte
-									</p>
-								</div>
-							</div>
-							<div class="single-popular-carusel">
-								<div class="thumb-wrap relative">
-									<div class="thumb relative">
-										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="{% static 'img/p1.jpg' %}" alt="">
-									</div>
-									<div class="meta d-flex justify-content-between">
-										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
-										<h4>$150</h4>
-									</div>
-								</div>
-								<div class="details">
-									<a href="#">
-										<h4>
-											Learn Designing
-										</h4>
-									</a>
-									<p>
-										When television was young, there was a hugely popular show based on the still popular fictional characte
-									</p>
-								</div>
-							</div>
-							<div class="single-popular-carusel">
-								<div class="thumb-wrap relative">
-									<div class="thumb relative">
-										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="{% static 'img/p2.jpg' %}" alt="">
-									</div>
-									<div class="meta d-flex justify-content-between">
-										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
-										<h4>$150</h4>
-									</div>
-								</div>
-								<div class="details">
-									<a href="#">
-										<h4>
-											Learn React js beginners
-										</h4>
-									</a>
-									<p>
-										When television was young, there was a hugely popular show based on the still popular fictional characte
-									</p>
-								</div>
-							</div>
-							<div class="single-popular-carusel">
-								<div class="thumb-wrap relative">
-									<div class="thumb relative">
-										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="{% static 'img/p3.jpg' %}" alt="">
-									</div>
-									<div class="meta d-flex justify-content-between">
-										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
-										<h4>$150</h4>
-									</div>
-								</div>
-								<div class="details">
-									<a href="#">
-										<h4>
-											Learn Photography
-										</h4>
-									</a>
-									<p>
-										When television was young, there was a hugely popular show based on the still popular fictional characte
-									</p>
-								</div>
-							</div>
-							<div class="single-popular-carusel">
-								<div class="thumb-wrap relative">
-									<div class="thumb relative">
-										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="{% static 'img/p4.jpg' %}" alt="">
-									</div>
-									<div class="meta d-flex justify-content-between">
-										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
-										<h4>$150</h4>
-									</div>
-								</div>
-								<div class="details">
-									<a href="#">
-										<h4>
-											Learn Surveying
-										</h4>
-									</a>
-									<p>
-										When television was young, there was a hugely popular show based on the still popular fictional characte
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
+                            {% endfor %}
+                {% endif %}
 				</div>
 			</section>
 			<!-- End popular-course Area -->

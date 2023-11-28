@@ -28,6 +28,7 @@ from Courses.forms import LoginForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
 
       # path('', include('users.urls')),
     path('login/',

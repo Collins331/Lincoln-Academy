@@ -13,7 +13,8 @@ from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 
 # Create your views here.
 def home(request):
-    return render(request, 'index.html')
+    data = Courses.objects.all()
+    return render(request, 'index.html', {'data': data})
 
 def course_details(request):
     return render(request, 'course-details.html')

@@ -40,7 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Courses.apps.CoursesConfig',
     'social_django',
+    #added Oauth2
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     # 'Courses'
+    #for google
+    'allauth.socialaccount.providers.google'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'Academy.urls'
@@ -73,7 +81,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Academy.wsgi.application'
 
-
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -105,11 +123,13 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',
     'social_core.backends.google.GoogleOAuth2',
+    # used for social authentications
+    'allauth.account.auth_backends.AuthenticationBackend',
 
     'django.contrib.auth.backends.ModelBackend',
 )
 
-
+SITE_ID = 1
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 

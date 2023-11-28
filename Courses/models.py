@@ -43,3 +43,11 @@ class Courses(models.Model):
 
     def __str__(self):
         return self.course
+
+
+class Blog(models.Model):
+    title = models.CharField(blank=False, max_length=300)
+    intro = models.TextField(blank=False)
+    link = models.CharField(blank=False, max_length=200)
+    img = models.ImageField(default='quiz.jpg')
+    date = models.DateTimeField(auto_created=True)
