@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} Add event {% endblock %}
+{% load static %}
+{% block body %}
+    			<!-- start banner Area -->
+			<section class="banner-area relative about-banner" id="home">
+				<div class="overlay overlay-bg"></div>
+				<div class="container">
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<h1 class="text-white">
+								Events
+							</h1>
+							<p class="text-white link-nav"><a href="{% url 'linc:home' %}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="events.html"> Events</a></p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End banner Area -->
+<h1 style="text-align: center; color: #0069d9" >Add Event</h1>
+    <form method="post" action="/addevent" enctype="multipart/form-data">
+    {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name: </label>
+        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+{#        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>#}
+      </div>
+       <div class="mb-3">
+        <label for="phonenumber" class="form-label">Phone number</label>
+        <input type="number" name="phone" class="form-control" id="phonenumber">
+      </div>
+        <div class="mb-3">
+        <label for="title" class="form-label">Title : </label>
+        <input type="text" name="title" class="form-control" id="title">
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Date : </label>
+        <input type="date" name="date" class="form-control" id="date">
+      </div>
+        <div class="mb-3">
+        <label for="link" class="form-label">Link : </label>
+        <input type="text" name="link" class="form-control" id="link">
+      </div>
+        <div class="mb-3">
+        <label for="detail"> Give a brief description of the event</label>
+        <textarea name="detail" id="detail" cols="30" rows="10" placeholder="Description"></textarea>
+        </div>
+        <div class="mb-3">
+            <input type="file" placeholder="Event poster" name="img">
+        </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

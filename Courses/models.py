@@ -40,6 +40,8 @@ class Courses(models.Model):
     image = models.ImageField(default='comp.jpg')
     description = models.TextField(blank=False)
     price = models.IntegerField(blank=False)
+    users = models.IntegerField(default=175)
+    comments = models.IntegerField(default=56)
 
     def __str__(self):
         return self.course
@@ -51,3 +53,29 @@ class Blog(models.Model):
     link = models.CharField(blank=False, max_length=200)
     img = models.ImageField(default='quiz.jpg')
     date = models.DateTimeField(auto_created=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Event(models.Model):
+    name = models.CharField(max_length=150)
+    phone_number = models.IntegerField(blank=False)
+    title = models.CharField(max_length=100)
+    date = models.DateTimeField()
+    link = models.CharField(max_length=300, blank=False, default='https://www.wikipedia.com')
+    detail = models.TextField(blank=False)
+    poster = models.ImageField(default='soon.jpeg')
+
+    def __str__(self):
+        return self.title
+
+
+class Review(models.Model):
+    name = models.CharField(max_length=100)
+    comment = models.TextField(blank=False)
+    star = models.IntegerField()
+    img = models.ImageField(default='icon.png')
+
+    def __str__(self):
+        return self.name

@@ -21,130 +21,33 @@
 
 			<!-- Start events-list Area -->
 			<section class="events-list-area section-gap event-page-lists">
+
 				<div class="container">
+                    <div class="d-grid gap-2 col-6 mx-auto m-5">
+                        <a href="{% url 'linc:addevent' %}">
+                            <button class="btn btn-primary" type="button">Add Event</button>
+                        </a>
+                    </div>
+                    {% if data %}
 					<div class="row align-items-center">
+                        {% for day in data %}
 						<div class="col-lg-6 pb-30">
 							<div class="single-carusel row align-items-center">
 								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="{% static 'img/e1.jpg' %}" alt="">
+									<img class="img-fluid" src="media/{{ day.poster }}" alt="">
 								</div>
 								<div class="detials col-12 col-md-6">
-									<p>25th December 2023</p>
-									<a href="{% url 'linc:event_details' %}"><h4>The Universe Through
-									A Child S Eyes</h4></a>
+									<p>{{ day.date }}</p>
+									<a href="{{ day.link }}" target="_blank"><h4>{{ day.title }}</h4></a>
 									<p>
-										For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.
+										{{ day.detail }}
 									</p>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-6 pb-30">
-							<div class="single-carusel row align-items-center">
-								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="{% static 'img/e2.jpg' %}" alt="">
-								</div>
-								<div class="detials col-12 col-md-6">
-									<p>25th November 2023</p>
-									<a href="{% url 'linc:event_details' %}"><h4>The Universe Through
-									A Child S Eyes</h4></a>
-									<p>
-										For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 pb-30">
-							<div class="single-carusel row align-items-center">
-								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="{% static 'img/e1.jpg' %}" alt="">
-								</div>
-								<div class="detials col-12 col-md-6">
-									<p>25th December 2023</p>
-									<a href="{% url 'linc:event_details' %}"><h4>The Universe Through
-									A Child S Eyes</h4></a>
-									<p>
-										For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 pb-30">
-							<div class="single-carusel row align-items-center">
-								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="{% static 'img/e2.jpg' %}" alt="">
-								</div>
-								<div class="detials col-12 col-md-6">
-									<p>25th November 2023</p>
-									<a href="{% url 'linc:event_details' %}"><h4>The Universe Through
-									A Child S Eyes</h4></a>
-									<p>
-										For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 pb-30">
-							<div class="single-carusel row align-items-center">
-								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="{% static 'img/e1.jpg' %}" alt="">
-								</div>
-								<div class="detials col-12 col-md-6">
-									<p>25th November 2023</p>
-									<a href="{% url 'linc:event_details' %}"><h4>The Universe Through
-									A Child S Eyes</h4></a>
-									<p>
-										For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 pb-30">
-							<div class="single-carusel row align-items-center">
-								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="{% static 'img/e2.jpg' %}" alt="">
-								</div>
-								<div class="detials col-12 col-md-6">
-									<p>25th November 2025</p>
-									<a href="{% url 'linc:event_details' %}"><h4>The Universe Through
-									A Child S Eyes</h4></a>
-									<p>
-										For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 pb-30">
-							<div class="single-carusel row align-items-center">
-								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="{% static 'img/e1.jpg' %}" alt="">
-								</div>
-								<div class="detials col-12 col-md-6">
-									<p>25th November 2023</p>
-									<a href="{% url 'linc:event_details' %}"><h4>The Universe Through
-									A Child S Eyes</h4></a>
-									<p>
-										For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="single-carusel row align-items-center">
-								<div class="col-12 col-md-6 thumb">
-									<img class="img-fluid" src="{% static 'img/e2.jpg' %}" alt="">
-								</div>
-								<div class="detials col-12 col-md-6">
-									<p>25th November 2023</p>
-									<a href="#"><h4>The Universe Through
-									A Child S Eyes</h4></a>
-									<p>
-										For most of us, the idea of astronomy is something we directly connect to “stargazing”, telescopes and seeing magnificent displays in the heavens.
-									</p>
-								</div>
-							</div>
-						</div>
-						<a href="{% url 'linc:courses' %}" class="text-uppercase primary-btn mx-auto mt-40">Load more courses</a>
+                        {% endfor %}
 					</div>
+                    {% endif %}
 				</div>
 			</section>
 			<!-- End events-list Area -->

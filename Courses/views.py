@@ -3,7 +3,7 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.db.models import Q
-from .models import Contact, Courses, Profile
+from .models import Contact, Courses, Profile, Blog, Event, Review
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
@@ -14,7 +14,9 @@ from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 # Create your views here.
 def home(request):
     data = Courses.objects.all()
-    return render(request, 'index.html', {'data': data})
+    event = Event.objects.all()
+    review =Review.objects.all()
+    return render(request, 'index.html', {'data': data, 'event': event, 'review': review})
 
 def course_details(request):
     return render(request, 'course-details.html')
@@ -29,7 +31,24 @@ def about(request):
 
 
 def events(request):
-    return render(request, 'events.html')
+    event = Event.objects.all()
+    return render(request, 'events.html', {'data': event})
+
+def addevent(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        number = request.POST['phone']
+        title = request.POST['title']
+        link = request.POST['link']
+        date = request.POST['date']
+        detail = request.POST['detail']
+        image = request.FILES['img']
+
+        evt = Event(name=name, phone_number=number, title=title, link=link, date=date, detail=detail, poster=image)
+        evt.save()
+        messages.success(request, 'Event added successfully!')
+        return redirect('/')
+    return render(request, 'addevent.html')
 
 
 def courses(request):
@@ -154,7 +173,7 @@ def profile(request):
             user_form.save()
             profile_form.save()
             messages.success(request, 'Your profile is updated successfully')
-            return redirect(to='users-profile')
+            return redirect(to='linc:users-profile')
     else:
         user_form = UpdateUserForm(instance=request.user)
         profile_form = UpdateProfileForm(instance=request.user.profile)
