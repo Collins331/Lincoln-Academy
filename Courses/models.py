@@ -79,3 +79,12 @@ class Review(models.Model):
 
     def __str__(self):
         return self.name
+
+class Gallery(models.Model):
+    name = models.CharField(max_length=100)
+    img1 = models.ImageField(default='write.jpg')
+    img2 = models.ImageField(default='write.jpg')
+    img3 = models.ImageField(default='write.jpg')
+
+    def __str__(self):
+        return self.name

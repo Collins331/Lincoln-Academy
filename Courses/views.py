@@ -3,7 +3,7 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.db.models import Q
-from .models import Contact, Courses, Profile, Blog, Event, Review
+from .models import Contact, Courses, Profile, Blog, Event, Review, Gallery
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
@@ -23,11 +23,13 @@ def course_details(request):
 
 
 def gallery(request):
-    return render(request, 'gallery.html')
+    img = Gallery.objects.all()
+    return render(request, 'gallery.html', {'img': img})
 
 
 def about(request):
-    return render(request, 'about.html')
+    review = Review.objects.all()
+    return render(request, 'about.html', {'review': review})
 
 
 def events(request):
@@ -81,7 +83,8 @@ def event_details(request):
 
 
 def blog_home(request):
-    return render(request, 'blog-home.html')
+    blog = Blog.objects.all()
+    return render(request, 'blog-home.html', {'blog': blog})
 
 
 

@@ -24,76 +24,39 @@
 			<section class="gallery-area section-gap">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-7">
-							<a href="{% static 'img/gallery/g1.jpg' %}" class="img-gal">
+                        {% for im in img %}
+						<div class="col-lg-4">
+							<a href="media/{{ im.img1 }}" class="img-gal">
 								<div class="single-imgs relative">
 									<div class="overlay overlay-bg"></div>
 									<div class="relative">
-										<img class="img-fluid" src="{% static 'img/gallery/g1.jpg' %}" alt="">
+										<img class="img-fluid" src="media/{{ im.img1 }}" alt="">
 									</div>
 								</div>
 							</a>
 						</div>
-						<div class="col-lg-5">
-							<a href="{% static 'img/gallery/g2.jpg' %}" class="img-gal">
+
+						<div class="col-lg-4">
+							<a href="media/{{ im.img2 }}" class="img-gal">
 								<div class="single-imgs relative">
 									<div class="overlay overlay-bg"></div>
 									<div class="relative">
-										<img class="img-fluid" src="{% static 'img/gallery/g2.jpg' %}" alt="">
+										<img class="img-fluid" src="media/{{ im.img2 }}" alt="">
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-4">
-							<a href="{% static 'img/gallery/g3.jpg' %}" class="img-gal">
+							<a href="media/{{ im.img3 }}" class="img-gal">
 								<div class="single-imgs relative">
 									<div class="overlay overlay-bg"></div>
 									<div class="relative">
-										<img class="img-fluid" src="{% static 'img/gallery/g3.jpg' %}" alt="">
+										<img class="img-fluid" src="media/{{ im.img3 }}" alt="">
 									</div>
 								</div>
 							</a>
 						</div>
-						<div class="col-lg-4">
-							<a href="{% static 'img/gallery/g4.jpg' %}" class="img-gal">
-								<div class="single-imgs relative">
-									<div class="overlay overlay-bg"></div>
-									<div class="relative">
-										<img class="img-fluid" src="{% static 'img/gallery/g4.jpg' %}" alt="">
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-4">
-							<a href="{% static 'img/gallery/g5.jpg' %}"  class="img-gal">
-								<div class="single-imgs relative">
-									<div class="overlay overlay-bg"></div>
-									<div class="relative">
-										<img class="img-fluid" src="{% static 'img/gallery/g5.jpg' %}" alt="">
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-5">
-							<a href="{% static 'img/gallery/g6.jpg' %}" class="img-gal">
-								<div class="single-imgs relative">
-									<div class="overlay overlay-bg"></div>
-									<div class="relative">
-										<img class="img-fluid" src="{% static 'img/gallery/g6.jpg' %}" alt="">
-									</div>
-								</div>
-							 </a>
-						</div>
-						<div class="col-lg-7">
-							<a href="{% static 'img/gallery/g7.jpg' %}" class="img-gal">
-								<div class="single-imgs relative">
-									<div class="overlay overlay-bg"></div>
-									<div  class="relative">
-										<img class="img-fluid" src="{% static 'img/gallery/g7.jpg' %}" alt="">
-									</div>
-								</div>
-							</a>
-						</div>
+                        {% endfor %}
 					</div>
 				</div>
 			</section>
